@@ -6,26 +6,24 @@
 #define MAX_EMPLOYEES 10
 #define MAX_NAME_LENGTH 50
 
-//  payment methods
-enum PaymentMethod {
-    HOURLY_RATE,
-    SALARY
-};
+//  for payment methods
+#define HOURLY_RATE 0
+#define SALARY 1
 
 // Structure to represent an employee
 struct Employee {
     char name[MAX_NAME_LENGTH];
     int hoursWorked;
     float hourlyRate;
-    float basicSalary; // New member for basic salary
+    float basicSalary; //  basic salary
     float totalPayment;
     float pf; // Provident Fund
     float insurance;
     float extra;
-    enum PaymentMethod paymentMethod; // New member for payment method
+    int paymentMethod; // New member for payment method
 };
 
-// Function prototypes
+// Function
 void inputEmployeeDetails(struct Employee employees[], int numEmployees);
 void calculateTotalPayment(struct Employee employees[], int numEmployees);
 void displayPaymentDetails(struct Employee employees[], int numEmployees);
